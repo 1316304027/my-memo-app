@@ -19,12 +19,6 @@ class Memo(db.Model):
     title = db.Column(db.String(50),nullable=False)
     #内容
     content = db.Column(db.Text)
-    # ▼▼▼▼▼ 13.1 ▼▼▼▼▼
-    # ユーザーID
-    # user_id = db.Column(db.Integer,db.ForeignKey('users.id',name="fk_memos_users"),nullable=False)
-    # User とのリレーション
-    # user = relationship("User",back_populates="memos")
-    #▲▲▲▲▲ リスト13.1追加 ▲▲▲▲▲
 
 # ユーザー
 class User(UserMixin,db.Model):
@@ -36,12 +30,6 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(50),unique=True, nullable=False)
     #　パスワード
     password = db.Column(db.String(120),nullable=False)
-
-    # ▼▼▼▼▼ 13.1 ▼▼▼▼▼
-    # Memo とのリレーション
-    # リレーション：1対多
-    # memo = relationship("Memo",back_populates="user")
-    # ▲▲▲▲▲ リスト13.1追加 ▲▲▲▲▲
 
     #　パスワードをハッシュ化して設定する
     def set_password(self,password):

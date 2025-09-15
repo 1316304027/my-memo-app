@@ -4,7 +4,6 @@
 class Config(object):
     #デバッグモード
     DEBUG = True
-    # 添加内容10.5
     # CSRFやセッションで使用(イテレーション02で追加)
     SECRET_KEY = "secret-key"
     # 警告対策

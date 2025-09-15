@@ -51,9 +51,3 @@ def show_404_page(error):
 #======================================================================================
 if __name__=="__main__":
     app.run()
-#▲▲▲▲▲ リスト11.3追加修正版 ▲▲▲▲▲
-
-# viewsのインポートcd WORK_FLASK/my_memo_app
-# flask --app app db migrate -m "create users table"
-# flask --app app db upgrade
-#from views import *
