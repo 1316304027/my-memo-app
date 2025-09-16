@@ -14,6 +14,11 @@ app=Flask(__name__)
 app.config.from_object("my_memo_app.config.Config")
 # dbとFlaskとの紐付け
 db.init_app(app)
+
+# (SQLAlchemy)データベースの初期化
+with app.app_context():
+    db.create_all()
+
 # マイグレーションとの紐付け(Flaskとｄｂ)
 migrate = Migrate(app, db)
 
